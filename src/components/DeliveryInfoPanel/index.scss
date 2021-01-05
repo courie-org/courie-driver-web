@@ -1,0 +1,44 @@
+.delivery-info-container {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: top;
+  height: 0px;
+  width: 60%;
+  position: fixed;
+  bottom: -40;
+  left: 20%;
+  background-color: #F0EEEE;
+  padding: 1rem;
+  border-radius: 0.25rem;
+  border: 0.5px solid #7B2CBF; //#C77DFF;
+  border-bottom: none;
+  transition: height 1s, bottom 1s;
+}
+
+.delivery-info-container-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.delivery-info-container.active {
+  height: 18vh;
+  bottom: 0;
+}
+
+.delivery-info-container-body {
+  flex: 2;
+  padding: 1px;
+}
+
+.delivery-info-data {
+  padding-top: 1rem;
+}
+
+.delivery-info-container-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
