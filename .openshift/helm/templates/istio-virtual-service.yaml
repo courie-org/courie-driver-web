@@ -1,0 +1,19 @@
+{{- if .Values.firstInstall -}}
+apiVersion: networking.istio.io/v1alpha3
+kind: VirtualService
+metadata:
+  name: courie-driver-web-routing-config
+spec:
+  hosts:
+  - "courie-driver-web.{{ .Values.baseOpenshiftAppHostname }}"
+  gateways:
+  - courie-driver-web-gateway
+  http:
+  - match:
+    - uri:
+        prefix: /
+    route:
+    - destination:
+        host: courie-driver-web
+        subset: {{ .Values.versionName }}
+{{- end }}
